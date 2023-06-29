@@ -23,19 +23,20 @@ export default function Drink() {
                 <button onClick={ () => setDrinkType('port')}>port</button>
             </nav>
 
-            <div>
+            <div className="button-getdrink">
                 <button onClick={ () => getDrink(drinkType)}>Get Dranks</button>
             </div>
 
-
+            <div className="drink-container">
             <h2>{drinkType}</h2>
             <div className="drink-list">
                 {
                     !drinkList
                     ?<p>NO DRANK!!!</p>
                     : drinkList.map( (element, index) => {
-                    return (
-                        <div key={index}>
+                        
+                        return (
+                            <div key={index} className="hover-effect">
                             <img src={element.image} alt="cover" />
                             <h3>{element.wine}</h3>                                
                             <p>Location: {element.location}</p>
@@ -46,6 +47,7 @@ export default function Drink() {
                 }
 
 
+                </div>
             </div>
         </section>
     )
